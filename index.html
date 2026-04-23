@@ -4,12 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zurich – A Premium Salon | Patna</title>
+    <title>S2 Unisex Salon – A Premium Salon | Patna</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <noscript>
+        <style>
+            .reveal {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        </style>
+    </noscript>
 </head>
 
 <body>
@@ -18,15 +26,16 @@
 
     <!-- NAV -->
     <nav id="navbar">
-        <a href="#hero" class="nav-logo">Zurich <span>Salon</span></a>
+        <a href="#hero" class="nav-logo">S2 Unisex <span>Salon</span></a>
         <ul class="nav-links" id="navLinks">
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
+            <li><a href="#pricing">Pricing</a></li>
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#why">Why Us</a></li>
-            <li><a href="#contact" class="nav-cta">Book Now</a></li>
+            <li><a href="javascript:void(0)" class="nav-cta" data-booking="true">Book Now</a></li>
         </ul>
-        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <div class="hamburger" id="hamburger">
             <span></span><span></span><span></span>
         </div>
     </nav>
@@ -37,12 +46,12 @@
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <p class="hero-eyebrow">Patna's Finest Beauty Destination</p>
-            <h1 class="hero-title">Zurich<br><em>A Premium Salon</em></h1>
+            <h1 class="hero-title">S2 Unisex Salon<br><em>A Premium Salon</em></h1>
             <div class="hero-divider"></div>
             <p class="hero-tagline">Where luxury meets artistry — crafted for you</p>
             <div class="hero-stars">
                 <span class="stars">★★★★★</span>
-                4.8 Rating &nbsp;·&nbsp; 475+ Happy Clients
+                4.7 Rating &nbsp;·&nbsp; 435+ Happy Clients
             </div>
             <a href="#contact" class="btn-primary">Book Appointment</a>
             <a href="#services" class="btn-outline">Our Services</a>
@@ -54,35 +63,35 @@
     <section id="about">
         <div class="about-grid">
             <div class="about-img-wrap reveal">
-                <img src="assets/images/about-salon.png" alt="Zurich Salon Interior" class="about-image">
-                alt="Zurich Salon Interior">
+                <img src="assets/images/about-salon.png" alt="S2 Unisex Salon Interior" class="about-image">
+
                 <div class="about-badge">
-                    <span class="rating">4.8</span>
+                    <span class="rating">4.7</span>
                     <span class="stars-sm">★★★★★</span>
-                    <span class="reviews">475 Reviews</span>
+                    <span class="reviews">435 Reviews</span>
                 </div>
             </div>
             <div class="about-text reveal reveal-delay-2">
                 <p class="section-label">Our Story</p>
                 <h2 class="section-title">A Space Designed<br>for <em>Indulgence</em></h2>
                 <div class="gold-line"></div>
-                <p>Zurich is Patna's most distinguished beauty sanctuary — where premium aesthetics meet heartfelt
+                <p>S2 Unisex Salon is Patna's most distinguished beauty sanctuary — where premium aesthetics meet heartfelt
                     service. Every corner of our salon is designed to transport you from the ordinary into an experience
                     of refined luxury.</p>
                 <p>Our expert stylists and beauty professionals are trained in the latest global techniques, working
                     with world-class products to deliver results that exceed expectations. Whether it's a transformative
-                    haircut or a blissful spa day, Zurich is your destination.</p>
+                    haircut or a blissful spa day, S2 Unisex Salon is your destination.</p>
                 <div class="about-stats">
                     <div class="stat-item">
                         <span class="stat-num">10+</span>
                         <span class="stat-lbl">Services</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-num">475+</span>
+                        <span class="stat-num">435+</span>
                         <span class="stat-lbl">Reviews</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-num">4.8★</span>
+                        <span class="stat-num">4.7★</span>
                         <span class="stat-lbl">Rating</span>
                     </div>
                 </div>
@@ -97,12 +106,13 @@
             <h2 class="section-title">Our <em>Signature</em><br>Services</h2>
             <div class="gold-line"></div>
             <p style="color:var(--warm-grey);font-size:0.9rem;line-height:1.8;">From precision cuts to restorative
-                treatments, every service at Zurich is delivered with meticulous care and expertise.</p>
+                treatments, every service at S2 Unisex Salon is delivered with meticulous care and expertise.</p>
         </div>
         <div class="services-grid">
-            <div class="service-card reveal">
-                <img src="assets/images/service-pedicure.png" alt="Pedicure" class="parallax-img">
-                alt="Pedicure">
+            <div class="service-card reveal" data-service="pedicure">
+                <div class="parallax-container">
+                    <img src="assets/images/service-pedicure.png" alt="Pedicure" class="parallax-img">
+                </div>
                 <div class="service-card-overlay"></div>
                 <div class="service-card-content">
                     <div class="service-gold-line"></div>
@@ -111,10 +121,10 @@
                     <p class="service-desc">Luxury foot care with spa-grade treatments and nail artistry.</p>
                 </div>
             </div>
-            <div class="service-card reveal reveal-delay-1" onclick="openModal('hairstyling')">
+            <div class="service-card reveal reveal-delay-1" data-service="makeup">
                 <div class="parallax-container">
                     <img src="assets/images/service-makeup.png" alt="Premium Makeup Artistry" class="parallax-img">
-                    alt="Makeup" class="parallax-img">
+
                 </div>
                 <div class="service-card-overlay"></div>
                 <div class="service-card-content">
@@ -124,10 +134,10 @@
                     <p class="service-desc">Professional makeup with Hollywood vanity lighting for flawless results.</p>
                 </div>
             </div>
-            <div class="service-card reveal reveal-delay-2" onclick="openModal('color')">
+            <div class="service-card reveal reveal-delay-2" data-service="shampoo">
                 <div class="parallax-container">
                     <img src="assets/images/service-shampoo.png" alt="Shampoo & Conditioning" class="parallax-img">
-                    alt="Shampoo &amp; Conditioning" class="parallax-img">
+
                 </div>
                 <div class="service-card-overlay"></div>
                 <div class="service-card-content">
@@ -137,9 +147,10 @@
                     <p class="service-desc">Deep cleansing and nourishing treatments with premium hair care lines.</p>
                 </div>
             </div>
-            <div class="service-card reveal">
-                <img src="assets/images/service-massage.png" alt="Massage" class="parallax-img">
-                alt="Massage">
+            <div class="service-card reveal" data-service="massage">
+                <div class="parallax-container">
+                    <img src="assets/images/service-massage.png" alt="Massage" class="parallax-img">
+                </div>
                 <div class="service-card-overlay"></div>
                 <div class="service-card-content">
                     <div class="service-gold-line"></div>
@@ -148,10 +159,10 @@
                     <p class="service-desc">Relaxing full-body massage in a serene private treatment room.</p>
                 </div>
             </div>
-            <div class="service-card reveal reveal-delay-1" onclick="openModal('hairstyling')">
+            <div class="service-card reveal reveal-delay-1" data-service="hairstyling">
                 <div class="parallax-container">
                     <img src="assets/images/service-hairstyling.png" alt="Hairstyling" class="parallax-img">
-                    alt="Hairstyling" class="parallax-img">
+
                 </div>
                 <div class="service-card-overlay"></div>
                 <div class="service-card-content">
@@ -161,10 +172,10 @@
                     <p class="service-desc">Expert cuts, blowouts and styling that frame your best features.</p>
                 </div>
             </div>
-            <div class="service-card reveal reveal-delay-2" onclick="openModal('color')">
+            <div class="service-card reveal reveal-delay-2" data-service="threading">
                 <div class="parallax-container">
                     <img src="assets/images/service-threading.png" alt="Eyebrow Threading" class="parallax-img">
-                    alt="Eyebrow Threading" class="parallax-img">
+
                 </div>
                 <div class="service-card-overlay"></div>
                 <div class="service-card-content">
@@ -174,9 +185,10 @@
                     <p class="service-desc">Precise brow shaping and threading for perfectly defined arches.</p>
                 </div>
             </div>
-            <div class="service-card reveal" style="grid-column: span 1;">
-                <img src="assets/images/service-massage.png" alt="Body Waxing" class="parallax-img">
-                alt="Body Waxing">
+            <div class="service-card reveal" style="grid-column: span 1;" data-service="waxing">
+                <div class="parallax-container">
+                    <img src="assets/images/gallery-2.png" alt="Body Waxing" class="parallax-img">
+                </div>
                 <div class="service-card-overlay"></div>
                 <div class="service-card-content">
                     <div class="service-gold-line"></div>
@@ -185,10 +197,10 @@
                     <p class="service-desc">Smooth, long-lasting results with hygienic waxing in a private suite.</p>
                 </div>
             </div>
-            <div class="service-card reveal reveal-delay-1" onclick="openModal('hairstyling')">
+            <div class="service-card reveal reveal-delay-1" data-service="manicure">
                 <div class="parallax-container">
                     <img src="assets/images/service-pedicure.png" alt="Manicure" class="parallax-img">
-                    alt="Manicure" class="parallax-img">
+
                 </div>
                 <div class="service-card-overlay"></div>
                 <div class="service-card-content">
@@ -198,10 +210,10 @@
                     <p class="service-desc">Curated nail treatments using only premium products for lasting beauty.</p>
                 </div>
             </div>
-            <div class="service-card reveal reveal-delay-2" onclick="openModal('color')">
+            <div class="service-card reveal reveal-delay-2" data-service="blowouts">
                 <div class="parallax-container">
                     <img src="assets/images/hero-bg.png" alt="All Services" class="parallax-img">
-                    alt="All Services" class="parallax-img">
+
                 </div>
                 <div class="service-card-overlay"></div>
                 <div class="service-card-content">
@@ -216,53 +228,53 @@
 
     <!-- GALLERY -->
     <section id="gallery">
-        <div style="text-align:center;margin-bottom:50px;" class="reveal">
-            <p class="section-label" style="color:var(--gold-light);">Inside Zurich</p>
+        <div class="reveal section-header-centered">
+            <p class="section-label" style="color:var(--gold-light);">Inside S2 Unisex Salon</p>
             <h2 class="section-title" style="color:var(--white);">Our <em>Space</em></h2>
-            <div class="gold-line" style="margin:0 auto;"></div>
+            <div class="gold-line margin-center"></div>
         </div>
         <div class="gallery-grid">
             <div class="gallery-item reveal">
-                <img src="assets/images/gallery-1.png" alt="Salon Interior">
-                alt="Salon Interior">
+                <img src="assets/images/gallery-1.png" alt="Elegant Salon Reception and Waiting Area with Modern Decor">
+
             </div>
             <div class="gallery-item reveal reveal-delay-1">
-                <img src="assets/images/gallery-2.png" alt="Pedicure Area">
-                alt="Pedicure Area">
+                <img src="assets/images/gallery-2.png" alt="Premium Pedicure and Foot Spa Station">
+
             </div>
             <div class="gallery-item reveal reveal-delay-2">
-                <img src="assets/images/gallery-3.png" alt="Makeup Station">
-                alt="Makeup Station">
+                <img src="assets/images/gallery-3.png" alt="Illuminated Professional Makeup Studio Station">
+
             </div>
             <div class="gallery-item reveal reveal-delay-1">
-                <img src="assets/images/gallery-4.png" alt="Shampoo Stations">
-                alt="Shampoo Stations">
+                <img src="assets/images/gallery-4.png" alt="Luxury Hair Washing and Treatment Basins">
+
             </div>
             <div class="gallery-item reveal reveal-delay-2">
-                <img src="assets/images/gallery-5.png" alt="Barber">
-                alt="Barber">
+                <img src="assets/images/gallery-5.png" alt="Aesthetic and Calming Aroma Therapy Spa Room">
+
             </div>
             <div class="gallery-item reveal reveal-delay-3">
-                <img src="assets/images/gallery-6.png" alt="Private Room">
-                alt="Private Room">
+                <img src="assets/images/gallery-6.png" alt="Private Luxury Facial and Skin Treatment Suite">
+
             </div>
             <div class="gallery-item reveal reveal-delay-1">
-                <img src="assets/images/gallery-1.png" alt="Decor">
-                alt="Decor">
+                <img src="assets/images/gallery-1.png" alt="Detailed View of Premium Salon Interior Gold Accents">
+
             </div>
             <div class="gallery-item reveal reveal-delay-2">
-                <img src="assets/images/gallery-2.png" alt="Spa">
-                alt="Spa">
+                <img src="assets/images/gallery-2.png" alt="Professional Massage and Relaxation Spa Therapy Bed">
+
             </div>
         </div>
     </section>
 
     <!-- WHY US -->
     <section id="why">
-        <div style="text-align:center;margin-bottom:60px;" class="reveal">
-            <p class="section-label">The Zurich Promise</p>
+        <div class="reveal section-header-centered">
+            <p class="section-label">The S2 Unisex Salon Promise</p>
             <h2 class="section-title">Why Guests <em>Choose</em> Us</h2>
-            <div class="gold-line" style="margin:0 auto;"></div>
+            <div class="gold-line margin-center"></div>
         </div>
         <div class="why-grid" style="max-width:1200px;margin:0 auto;">
             <div class="why-card reveal">
@@ -314,50 +326,45 @@
                     <div class="p-image-box">
                         <img src="assets/images/price-hair-cut.png" alt="Creative Haircut">
                     </div>
-                    <div class="p-icon-floating">✂️</div>
                     <div class="p-content">
                         <span class="p-name">Creative Haircut</span>
-                        <span class="p-price">₹1,500+</span>
+                        <span class="p-price">₹1,500</span>
                     </div>
                 </div>
                 <div class="pricing-item">
                     <div class="p-image-box">
                         <img src="assets/images/price-hair-color.png" alt="Global Coloring">
                     </div>
-                    <div class="p-icon-floating">💇‍♀️</div>
                     <div class="p-content">
                         <span class="p-name">Global Coloring</span>
-                        <span class="p-price">₹4,500+</span>
+                        <span class="p-price">₹4,500</span>
                     </div>
                 </div>
                 <div class="pricing-item">
                     <div class="p-image-box">
                         <img src="assets/images/price-hair-balayage.png" alt="Balayage / Ombre">
                     </div>
-                    <div class="p-icon-floating">✨</div>
                     <div class="p-content">
                         <span class="p-name">Balayage / Ombre</span>
-                        <span class="p-price">₹7,000+</span>
+                        <span class="p-price">₹7,000</span>
                     </div>
                 </div>
                 <div class="pricing-item">
                     <div class="p-image-box">
                         <img src="assets/images/service-hairstyling.png" alt="Keratin Treatment">
                     </div>
-                    <div class="p-icon-floating">🧴</div>
                     <div class="p-content">
                         <span class="p-name">Keratin Treatment</span>
-                        <span class="p-price">₹10,000+</span>
+                        <span class="p-price">₹10,000</span>
                     </div>
                 </div>
                 <div class="pricing-item">
                     <div class="p-image-box">
                         <img src="assets/images/service-massage.png" alt="Scalp Therapy">
                     </div>
-                    <div class="p-icon-floating">💆‍♂️</div>
                     <div class="p-content">
                         <span class="p-name">Scalp Therapy</span>
-                        <span class="p-price">₹2,500+</span>
+                        <span class="p-price">₹2,500</span>
                     </div>
                 </div>
             </div>
@@ -367,50 +374,45 @@
                     <div class="p-image-box">
                         <img src="assets/images/gallery-6.png" alt="Radiance Facial">
                     </div>
-                    <div class="p-icon-floating">🧖‍♀️</div>
                     <div class="p-content">
                         <span class="p-name">Radiance Facial</span>
-                        <span class="p-price">₹3,500+</span>
+                        <span class="p-price">₹3,500</span>
                     </div>
                 </div>
                 <div class="pricing-item">
                     <div class="p-image-box">
                         <img src="assets/images/gallery-3.png" alt="Luxury Manicure">
                     </div>
-                    <div class="p-icon-floating">🌸</div>
                     <div class="p-content">
                         <span class="p-name">Luxury Manicure</span>
-                        <span class="p-price">₹1,800+</span>
+                        <span class="p-price">₹1,800</span>
                     </div>
                 </div>
                 <div class="pricing-item">
                     <div class="p-image-box">
                         <img src="assets/images/service-makeup.png" alt="Deep Detox Peel">
                     </div>
-                    <div class="p-icon-floating">🧼</div>
                     <div class="p-content">
                         <span class="p-name">Deep Detox Peel</span>
-                        <span class="p-price">₹5,000+</span>
+                        <span class="p-price">₹5,000</span>
                     </div>
                 </div>
                 <div class="pricing-item">
                     <div class="p-image-box">
                         <img src="assets/images/gallery-2.png" alt="Full Body Polishing">
                     </div>
-                    <div class="p-icon-floating">🧖‍♂️</div>
                     <div class="p-content">
                         <span class="p-name">Full Body Polishing</span>
-                        <span class="p-price">₹6,500+</span>
+                        <span class="p-price">₹6,500</span>
                     </div>
                 </div>
                 <div class="pricing-item">
                     <div class="p-image-box">
                         <img src="assets/images/gallery-5.png" alt="Aroma Therapy">
                     </div>
-                    <div class="p-icon-floating">🌿</div>
                     <div class="p-content">
                         <span class="p-name">Aroma Therapy</span>
-                        <span class="p-price">₹4,000+</span>
+                        <span class="p-price">₹4,000</span>
                     </div>
                 </div>
             </div>
@@ -420,50 +422,45 @@
                     <div class="p-image-box">
                         <img src="assets/images/service-makeup.png" alt="Signature Bridal">
                     </div>
-                    <div class="p-icon-floating">👰</div>
                     <div class="p-content">
                         <span class="p-name">Signature Bridal</span>
-                        <span class="p-price">₹15,000+</span>
+                        <span class="p-price">₹15,000</span>
                     </div>
                 </div>
                 <div class="pricing-item">
                     <div class="p-image-box">
                         <img src="assets/images/gallery-1.png" alt="Party Glamour">
                     </div>
-                    <div class="p-icon-floating">💄</div>
                     <div class="p-content">
                         <span class="p-name">Party Glamour</span>
-                        <span class="p-price">₹4,500+</span>
+                        <span class="p-price">₹4,500</span>
                     </div>
                 </div>
                 <div class="pricing-item">
                     <div class="p-image-box">
                         <img src="assets/images/gallery-3.png" alt="Editorial / HD">
                     </div>
-                    <div class="p-icon-floating">📸</div>
                     <div class="p-content">
                         <span class="p-name">Editorial / HD</span>
-                        <span class="p-price">₹6,000+</span>
+                        <span class="p-price">₹6,000</span>
                     </div>
                 </div>
                 <div class="pricing-item">
                     <div class="p-image-box">
                         <img src="assets/images/service-threading.png" alt="Eye Enhancement">
                     </div>
-                    <div class="p-icon-floating">👁️</div>
                     <div class="p-content">
                         <span class="p-name">Eye Enhancement</span>
-                        <span class="p-price">₹2,000+</span>
+                        <span class="p-price">₹2,000</span>
                     </div>
                 </div>
                 <div class="pricing-item">
                     <div class="p-image-box">
                         <img src="assets/images/gallery-5.png" alt="Groom's Special">
                     </div>
-                    <div class="p-icon-floating">👔</div>
                     <div class="p-content">
                         <span class="p-name">Groom's Special</span>
-                        <span class="p-price">₹5,000+</span>
+                        <span class="p-price">₹5,000</span>
                     </div>
                 </div>
             </div>
@@ -482,21 +479,18 @@
                 <div class="testimonials-group">
                     <div class="testimonial-card">
                         <div class="t-rating">★★★★★</div>
-                        <p class="t-text">"The precision threading here is unmatched. Finally found my go-to spot in
-                            Patna! Pure luxury."</p>
-                        <div class="t-author">Ananya Singh</div>
+                        <p class="t-text">"Perfect haircut and the styling was extremely good"</p>
+                        <div class="t-author">Happy Client</div>
                     </div>
                     <div class="testimonial-card">
                         <div class="t-rating">★★★★★</div>
-                        <p class="t-text">"Superb haircut and very professional staff. The premium vibe is truly worth
-                            every minute spent here."</p>
-                        <div class="t-author">Rohan Malhotra</div>
+                        <p class="t-text">"Very Professional and Extremely Talented Professionals for Makeup and Hair. I got my Groom makeup and service here ! Extremely satisfied ! Recommended for Bride and Groom …"</p>
+                        <div class="t-author">Happy Client</div>
                     </div>
                     <div class="testimonial-card">
                         <div class="t-rating">★★★★★</div>
-                        <p class="t-text">"Best pedicure I've ever had. So relaxing and meticulous! Highly recommend
-                            Zurich Salon for everyone."</p>
-                        <div class="t-author">Sneha Kapoor</div>
+                        <p class="t-text">"… clean area. Highly skilled female staffs are there to help you out look good with best communication. Great haircuts and everything superb, factastic services. I go here ."</p>
+                        <div class="t-author">Happy Client</div>
                     </div>
                     <div class="testimonial-card">
                         <div class="t-rating">★★★★★</div>
@@ -521,21 +515,18 @@
                 <div class="testimonials-group">
                     <div class="testimonial-card">
                         <div class="t-rating">★★★★★</div>
-                        <p class="t-text">"The precision threading here is unmatched. Finally found my go-to spot in
-                            Patna! Pure luxury."</p>
-                        <div class="t-author">Ananya Singh</div>
+                        <p class="t-text">"Perfect haircut and the styling was extremely good"</p>
+                        <div class="t-author">Happy Client</div>
                     </div>
                     <div class="testimonial-card">
                         <div class="t-rating">★★★★★</div>
-                        <p class="t-text">"Superb haircut and very professional staff. The premium vibe is truly worth
-                            every minute spent here."</p>
-                        <div class="t-author">Rohan Malhotra</div>
+                        <p class="t-text">"Very Professional and Extremely Talented Professionals for Makeup and Hair. I got my Groom makeup and service here ! Extremely satisfied ! Recommended for Bride and Groom …"</p>
+                        <div class="t-author">Happy Client</div>
                     </div>
                     <div class="testimonial-card">
                         <div class="t-rating">★★★★★</div>
-                        <p class="t-text">"Best pedicure I've ever had. So relaxing and meticulous! Highly recommend
-                            Zurich Salon for everyone."</p>
-                        <div class="t-author">Sneha Kapoor</div>
+                        <p class="t-text">"… clean area. Highly skilled female staffs are there to help you out look good with best communication. Great haircuts and everything superb, factastic services. I go here ."</p>
+                        <div class="t-author">Happy Client</div>
                     </div>
                     <div class="testimonial-card">
                         <div class="t-rating">★★★★★</div>
@@ -560,98 +551,111 @@
         </div>
     </section>
 
+    <!-- FAQ SECTION -->
+    <section id="faq">
+        <div class="reveal section-header-centered">
+            <p class="section-label">Questions?</p>
+            <h2 class="section-title">Frequently <em>Asked</em></h2>
+            <div class="gold-line margin-center"></div>
+        </div>
+        <div class="faq-container reveal reveal-delay-2">
+            <div class="faq-item">
+                <button class="faq-question">
+                    <h3>Do I need to book an appointment in advance?</h3>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>While we do accept walk-ins based on availability, we highly recommend booking in advance to
+                        ensure your preferred time slot and stylist are available.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <h3>What premium products do you use?</h3>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We use world-renowned professional lines including L'Oréal Professionnel, Kerastase, and premium
+                        organic skincare brands to ensure the best results for our guests.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <h3>Do you offer bridal packages?</h3>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes, we specialize in comprehensive bridal makeovers including hair, makeup, and pre-bridal
+                        grooming. Contact us for a personalized consultation.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <h3>Is there parking available?</h3>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes, we have dedicated parking space for our clients right in front of the salon at Maheshwari
+                        Enclave.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="contact">
         <div class="contact-grid">
             <div class="contact-info reveal">
                 <p class="section-label">Find Us</p>
-                <h2 class="section-title">Visit <em>Zurich</em><br>Salon</h2>
+                <h2 class="section-title">Visit <em>S2 Unisex</em><br>Salon</h2>
                 <div class="gold-line"></div>
+
+                <div class="contact-detail">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-detail-text">
+                        <strong>Call Us Directly</strong>
+                        <a href="tel:+919334233111" class="btn-primary contact-number-btn">+91
+                            93342 33111</a>
+                    </div>
+                </div>
+
                 <div class="contact-detail">
                     <div class="contact-icon">📍</div>
                     <div class="contact-detail-text">
                         <strong>Address</strong>
-                        24, Maheshwari Enclave, Kankarbagh Rd,<br>
-                        Near Shalimar Sweets, Khasmahal,<br>
-                        Lohia Nagar, Patna, Bihar 800020
+                        KASHYAP, SHAILJA TOWER, Kangkar Bagh Road,<br>
+                        Ghrounda,<br>
+                        Patna, Bihar 800020
                     </div>
                 </div>
                 <div class="contact-detail">
                     <div class="contact-icon">⭐</div>
                     <div class="contact-detail-text">
                         <strong>Rating</strong>
-                        4.7 out of 5 · 475 Google Reviews
+                        4.7 out of 5 · 435 Google Reviews
                     </div>
                 </div>
                 <div class="contact-detail">
                     <div class="contact-icon">🕐</div>
                     <div class="contact-detail-text">
                         <strong>Hours</strong>
-                        Monday – Saturday: 10:00 AM – 8:00 PM<br>
+                        Monday – Saturday: 10:00 AM – 8:30 PM<br>
                         Sunday: 11:00 AM – 6:00 PM
                     </div>
                 </div>
                 <div class="map-wrap">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3598.1!2d85.1376!3d25.5941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed58dce6732867%3A0xf54eb88f9fe15fca!2sLohia%20Nagar%2C%20Patna%2C%20Bihar!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin"
+                        src="https://maps.google.com/maps?q=KASHYAP,+SHAILJA+TOWER,+Kangkar+Bagh+Road,+Ghrounda,+Patna,+Bihar+800020&t=&z=15&ie=UTF8&iwloc=&output=embed"
                         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
             </div>
-            <div class="contact-form reveal reveal-delay-2">
-                <p class="section-label">Book Appointment</p>
-                <h2 class="section-title">Reserve Your <em>Visit</em></h2>
+            <div class="contact-form reveal reveal-delay-2"
+                style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+                <h2 class="section-title">Ready for Your <em>Visit?</em></h2>
                 <div class="gold-line"></div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>First Name</label>
-                        <input type="text" placeholder="Priya">
-                    </div>
-                    <div class="form-group">
-                        <label>Last Name</label>
-                        <input type="text" placeholder="Sharma">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Phone Number</label>
-                        <input type="tel" placeholder="+91 98765 43210">
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" placeholder="you@email.com">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Select Service</label>
-                    <select>
-                        <option value="">Choose a service...</option>
-                        <option>Eyebrow Threading</option>
-                        <option>Pedicure</option>
-                        <option>Haircut</option>
-                        <option>Blowouts</option>
-                        <option>Body Waxing</option>
-                        <option>Massage</option>
-                        <option>Makeup</option>
-                        <option>Manicure</option>
-                        <option>Shampoo &amp; Conditioning</option>
-                        <option>Hairstyling</option>
-                    </select>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Preferred Date</label>
-                        <input type="date">
-                    </div>
-                    <div class="form-group">
-                        <label>Preferred Time</label>
-                        <input type="time">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Special Requests</label>
-                    <textarea rows="3" placeholder="Any special requirements or notes..."></textarea>
-                </div>
-                <button class="form-submit" onclick="handleSubmit()">Confirm Appointment →</button>
+                <p style="color:var(--warm-grey); margin-bottom: 30px;">We look forward to welcoming you to S2 Unisex
+                    Salon. Click below to secure your appointment.</p>
+                <a href="javascript:void(0)" class="btn-primary" data-booking="true">Book Appointment</a>
             </div>
         </div>
     </section>
@@ -660,10 +664,11 @@
     <footer>
         <div class="footer-top">
             <div class="footer-brand">
-                <div class="logo">Zurich <span>Salon</span></div>
+                <div class="logo">S2 Unisex <span>Salon</span></div>
                 <p>"Where luxury meets artistry"</p>
                 <div class="social-links">
-                    <a href="#" class="social-link" title="Instagram">
+                    <a href="https://www.instagram.com/s2unisexsalon/" class="social-link" title="Instagram"
+                        target="_blank" rel="noopener noreferrer">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="1.5">
                             <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
@@ -671,12 +676,14 @@
                             <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" />
                         </svg>
                     </a>
-                    <a href="#" class="social-link" title="Facebook">
+                    <a href="https://www.facebook.com/s2unisexsalon" class="social-link" title="Facebook"
+                        target="_blank" rel="noopener noreferrer">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                         </svg>
                     </a>
-                    <a href="https://wa.me/91" class="social-link" title="WhatsApp">
+                    <a href="https://wa.me/919334233111" class="social-link" title="WhatsApp" target="_blank"
+                        rel="noopener noreferrer">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                             <path
                                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
@@ -687,16 +694,16 @@
             <div class="footer-links">
                 <div class="footer-col">
                     <h4>Services</h4>
-                    <a href="#services">Eyebrow Threading</a>
-                    <a href="#services">Haircut &amp; Blowouts</a>
-                    <a href="#services">Pedicure &amp; Manicure</a>
-                    <a href="#services">Makeup</a>
-                    <a href="#services">Body Waxing</a>
-                    <a href="#services">Massage</a>
+                    <a href="javascript:void(0)" data-service="threading">Eyebrow Threading</a>
+                    <a href="javascript:void(0)" data-service="hairstyling">Haircut &amp; Blowouts</a>
+                    <a href="javascript:void(0)" data-service="pedicure">Pedicure &amp; Manicure</a>
+                    <a href="javascript:void(0)" data-service="makeup">Makeup</a>
+                    <a href="javascript:void(0)" data-service="waxing">Body Waxing</a>
+                    <a href="javascript:void(0)" data-service="massage">Massage</a>
                 </div>
                 <div class="footer-col">
                     <h4>Salon</h4>
-                    <a href="#about">About Zurich</a>
+                    <a href="#about">About S2 Unisex Salon</a>
                     <a href="#gallery">Our Gallery</a>
                     <a href="#why">Why Choose Us</a>
                     <a href="#testimonials">Testimonials</a>
@@ -705,10 +712,89 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2026 Zurich – A Premium Salon <span class="gold-dot">·</span> Patna, Bihar</p>
+            <p>© 2026 S2 Unisex Salon <span class="gold-dot">·</span> Patna, Bihar</p>
             <p>Crafted with <span class="gold-dot">♥</span> for an exceptional experience</p>
         </div>
     </footer>
+
+
+    <!-- BOOKING MODAL -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content reveal" style="max-width: 600px; padding: 40px;">
+            <span class="booking-modal-close modal-close">&times;</span>
+            <div class="booking-modal-body">
+                <div class="modal-header-text">
+                    <h2 class="section-title" style="margin-bottom:10px;">Reserve Your <em>Visit</em></h2>
+                    <div class="gold-line margin-center"></div>
+                </div>
+
+                <div id="bookingConfirmation" class="confirmation-screen">
+                    <div class="confirmation-icon">✨</div>
+                    <h3 class="confirmation-title">Booking Confirmed</h3>
+                    <p class="confirmation-text">Thank you for your request! We have received your details and will
+                        contact you shortly to confirm your appointment time.</p>
+                    <button class="btn-outline" id="resetBookingFormBtn">Book Another Appointment</button>
+                </div>
+
+                <div id="bookingFormContainer">
+                    <form id="bookingForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input type="text" id="firstName" name="firstName" placeholder="Priya">
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input type="text" id="lastName" name="lastName" placeholder="Sharma">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel" id="phoneNumber" name="phone" placeholder="+91 98765 43210">
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" id="email" name="email" placeholder="you@email.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Select Service</label>
+                            <select id="service" name="service">
+                                <option value="">Choose a service...</option>
+                                <option>Eyebrow Threading</option>
+                                <option>Pedicure</option>
+                                <option>Haircut</option>
+                                <option>Blowouts</option>
+                                <option>Body Waxing</option>
+                                <option>Massage</option>
+                                <option>Makeup</option>
+                                <option>Manicure</option>
+                                <option>Shampoo &amp; Conditioning</option>
+                                <option>Hairstyling</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Preferred Date</label>
+                                <input type="date" id="date" name="date">
+                            </div>
+                            <div class="form-group">
+                                <label>Preferred Time</label>
+                                <input type="time" id="time" name="time">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Special Requests</label>
+                            <textarea id="specialRequests" name="notes" rows="3"
+                                placeholder="Any special requirements or notes..."></textarea>
+                        </div>
+                        <button type="submit" class="form-submit">Confirm Appointment →</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- QUICK VIEW MODAL -->
     <div id="serviceModal" class="modal">
@@ -731,7 +817,8 @@
                         </ul>
                     </div>
 
-                    <a href="#contact" class="btn-primary" onclick="closeModal()">Book This Treatment</a>
+                    <a href="javascript:void(0)" class="btn-primary close-modal-trigger" data-booking="true">Book This
+                        Treatment</a>
                 </div>
             </div>
         </div>
@@ -741,6 +828,14 @@
     <button id="scrollTop" aria-label="Scroll to top">
         <span>↑</span>
     </button>
+
+    <!-- MOBILE STICKY CTA -->
+    <div class="mobile-sticky-cta">
+        <a href="javascript:void(0)" class="btn-sticky" data-booking="true">Book Appointment Now</a>
+    </div>
+
+    <!-- TOAST NOTIFICATIONS -->
+    <div id="toastContainer" class="toast-container"></div>
 
     <script src="script.js" defer></script>
 </body>
