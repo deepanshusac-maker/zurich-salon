@@ -22,6 +22,15 @@ function handleScroll() {
     // Nav & Float Button
     if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 60);
 
+    // Video Scrubbing Logic
+    const heroVideo = document.getElementById('hero-video');
+    if (heroVideo) {
+        const scrollFraction = window.scrollY / window.innerHeight;
+        if (heroVideo.duration) {
+            heroVideo.currentTime = Math.min(heroVideo.duration, scrollFraction * heroVideo.duration);
+        }
+    }
+
     // Mobile Sticky CTA toggle
     const mobileSticky = document.querySelector('.mobile-sticky-cta');
     if (mobileSticky) mobileSticky.classList.toggle('visible', window.scrollY > 600);
